@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* Design Tokens & Theme Variables                                            */
+/* -------------------------------------------------------------------------- */
+:root {
+    --fms-bg: #F5F1E6;
+    --fms-bg-card: #FAF8F2;
+    --fms-bg-muted: #EAE4D3;
+    --fms-text: #626B45;
+    --fms-text-dark: #3E442B;
+    --fms-text-muted: rgba(98, 107, 69, 0.72);
+    --fms-text-faint: rgba(98, 107, 69, 0.45);
+    --fms-border: rgba(98, 107, 69, 0.16);
+    --fms-border-strong: rgba(98, 107, 69, 0.32);
+    --fms-olive-brand: #626B45;
+    --fms-olive-hover: #4E5536;
+    --ease-butter: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Global Reset & Base Styling                                                */
+/* -------------------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fms-bg);
+    color: var(--fms-text);
+    font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Butter-Smooth Animations & Utility Classes                                 */
+/* -------------------------------------------------------------------------- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.75s var(--ease-butter), transform 0.75s var(--ease-butter);
+    will-change: opacity, transform;
+}
+
+.reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 100ms;
+}
+
+.delay-2 {
+    transition-delay: 200ms;
+}
+
+.delay-3 {
+    transition-delay: 300ms;
+}
+
+.delay-4 {
+    transition-delay: 400ms;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s var(--ease-butter) forwards;
+}
+
+/* Responsive Primary Button */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    background-color: var(--fms-olive-brand);
+    color: var(--fms-bg);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.875rem 1.5rem;
+    min-height: 44px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-butter);
+    box-shadow: 0 2px 6px rgba(98, 107, 69, 0.15);
+    user-select: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--fms-olive-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(98, 107, 69, 0.22);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Responsive Secondary Button */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--fms-text);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.875rem 1.5rem;
+    min-height: 44px;
+    border-radius: 4px;
+    border: 1px solid var(--fms-border-strong);
+    cursor: pointer;
+    transition: all 0.3s var(--ease-butter);
+    user-select: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--fms-bg-card);
+    border-color: var(--fms-text);
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
