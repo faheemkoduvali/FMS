@@ -33,14 +33,16 @@ import { Component, output } from '@angular/core';
 
           <!-- Dual Buttons (Stacks vertically on phones, row on tablet/desktop) -->
           <div class="reveal-up is-visible delay-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
-            <button 
-              (click)="openModal.emit()"
-              class="btn-primary w-full sm:w-auto text-center">
+            <a 
+              [href]="whatsappUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary w-full sm:w-auto text-center no-underline">
               <span>Book a 30-Min Discovery Call</span>
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-            </button>
+            </a>
 
             <a href="#services" class="btn-secondary w-full sm:w-auto text-center">
               View Our Services
@@ -71,6 +73,8 @@ import { Component, output } from '@angular/core';
 })
 export class HeroComponent {
   openModal = output<void>();
+
+  whatsappUrl = 'https://wa.me/971543385034?text=' + encodeURIComponent('Hello FMS Crest, I would like to book a 30-minute discovery call.');
 
   trustBadges = [
     'FTA-Registered Tax Agents',

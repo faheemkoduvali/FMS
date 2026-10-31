@@ -20,11 +20,13 @@ import { Component, output } from '@angular/core';
             </p>
           </div>
 
-          <button 
-            (click)="openModal.emit()"
-            class="btn-primary w-full md:w-auto !py-3.5 sm:!py-4 !px-7 sm:!px-8 shrink-0 text-center">
+          <a 
+            [href]="whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary w-full md:w-auto !py-3.5 sm:!py-4 !px-7 sm:!px-8 shrink-0 text-center no-underline">
             Book Free Consultation
-          </button>
+          </a>
 
         </div>
       </div>
@@ -33,4 +35,6 @@ import { Component, output } from '@angular/core';
 })
 export class CtaBannerComponent {
   openModal = output<void>();
+
+  whatsappUrl = 'https://wa.me/971543385034?text=' + encodeURIComponent('Hello FMS Crest, I would like to book a free tax consultation.');
 }
