@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
                 THE FMS CREST ADVANTAGE
               </p>
               <div class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#3E442B] font-mono mb-1.5">
-                500+
+                20+
               </div>
               <p class="text-xs font-semibold tracking-[0.16em] uppercase text-[#626B45]/80">
                 UAE BUSINESSES TRUST OUR GUIDANCE
@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
             <div class="grid grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <div class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#3E442B] font-mono mb-1">
-                  10+
+                  3+
                 </div>
                 <p class="text-[11px] font-semibold tracking-wider uppercase text-[#626B45]/70">
                   Years UAE Experience
