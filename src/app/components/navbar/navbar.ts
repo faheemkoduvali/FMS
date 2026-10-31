@@ -14,17 +14,11 @@ import { NgClass } from '@angular/common';
       <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
         
         <!-- Brand Logo -->
-        <a href="#home" class="flex items-center gap-3 group focus:outline-none">
-          <div class="w-8 h-8 rounded border border-[#626B45]/25 flex items-center justify-center transition-all duration-300 group-hover:border-[#626B45] group-hover:bg-[#FAF8F2]">
-            <svg class="w-4 h-4 text-[#626B45] transition-transform duration-300 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-              <path d="M4 14L12 7L20 14" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 19L12 12L20 19" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="text-[#626B45] tracking-wider text-base leading-none">
-            <span class="font-bold">FMS</span>
-            <span class="font-light tracking-[0.22em] ml-1.5 text-[#626B45]/75 text-xs">CREST</span>
-          </div>
+        <a href="#home" class="flex items-center group focus:outline-none" aria-label="FMS Crest Tax Consultancy">
+          <img 
+            src="/logo.png" 
+            alt="FMS Crest Tax Consultancy" 
+            class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" />
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -43,11 +37,13 @@ import { NgClass } from '@angular/common';
             </a>
           }
 
-          <button 
-            (click)="openModal.emit()"
-            class="btn-primary !py-2.5 !px-5 !text-xs">
+          <a 
+            [href]="whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary !py-2.5 !px-5 !text-xs no-underline">
             Book Consultation
-          </button>
+          </a>
         </nav>
 
         <!-- Mobile Menu Toggle -->
@@ -76,11 +72,14 @@ import { NgClass } from '@angular/common';
               {{ item.label }}
             </a>
           }
-          <button 
-            (click)="mobileMenuOpen.set(false); openModal.emit()"
-            class="w-full btn-primary !py-3 !text-xs mt-2">
+          <a 
+            [href]="whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            (click)="mobileMenuOpen.set(false)"
+            class="w-full btn-primary !py-3 !text-xs mt-2 no-underline">
             Book Consultation
-          </button>
+          </a>
         </div>
       }
     </header>
@@ -88,6 +87,8 @@ import { NgClass } from '@angular/common';
 })
 export class NavbarComponent {
   openModal = output<void>();
+
+  whatsappUrl = 'https://wa.me/971543385034?text=' + encodeURIComponent('Hello FMS Crest, I would like to book a tax consultation.');
 
   isScrolled = signal(false);
   mobileMenuOpen = signal(false);
